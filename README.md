@@ -12,22 +12,34 @@ A simple FastAPI application that processes names and counts letter occurrences.
 ## API Flow Diagram
 
 ```mermaid
-graph TD
-    A[Client] -->|GET /| B[Root Endpoint]
-    A -->|POST /name| C[Name Endpoint]
-    C -->|Input| D[Name Payload Validation]
-    D -->|Valid| E[Letter Counter Utility]
-    E -->|Process| F[Generate Response]
-    F -->|JSON Response| A
-    D -->|Invalid| G[422 Validation Error]
-    G -->|Error Response| A
-    
-    style B fill:#90EE90
-    style C fill:#90EE90
-    style D fill:#FFB6C1
-    style E fill:#ADD8E6
-    style F fill:#DDA0DD
-    style G fill:#FF6B6B
+flowchart TD
+    A[Client]
+    B[Root Endpoint\n GET /]
+    C[Name Endpoint\n POST /name]
+    D[Pydantic Validator]
+    E[Letter Counter]
+    F[Response Generator]
+    G[Error Handler]
+
+    A --> |Request| B
+    A --> |Request| C
+    C --> |Validate| D
+    D --> |Valid| E
+    E --> |Process| F
+    F --> |Response| A
+    D --> |Invalid| G
+    G --> |Error| A
+
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000;
+    classDef client fill:#FFD700,stroke:#333,stroke-width:2px,color:#000;
+    classDef endpoint fill:#98FB98,stroke:#333,stroke-width:2px,color:#000;
+    classDef process fill:#87CEEB,stroke:#333,stroke-width:2px,color:#000;
+    classDef error fill:#FFB6C1,stroke:#333,stroke-width:2px,color:#000;
+
+    class A client;
+    class B,C endpoint;
+    class D,E,F process;
+    class G error;
 ```
 
 ## Installation

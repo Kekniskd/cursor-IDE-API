@@ -1,0 +1,12 @@
+{
+    "window.commandCenter": 1,
+    "editor.minimap.enabled": true,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "workbench.activityBar.location": "default",
+    "workbench.sideBar.location": "left",
+    "workbench.activityBar.iconClickBehavior": "focus",
+    "workbench.activityBar.orientation": "vertical",
+    "vscode-pets.theme": "beach",
+    "vscode-pets.throwBallWithMouse": true,
+    
+}

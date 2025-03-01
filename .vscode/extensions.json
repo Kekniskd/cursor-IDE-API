@@ -1,0 +1,25 @@
+{
+    "recommendations": [
+      "aaron-bond.better-comments",
+      "alexcvzz.vscode-sqlite",
+      "anysphere.pyright",
+      "bierner.markdown-mermaid",
+      "charliermarsh.ruff",
+      "eamodio.gitlens",
+      "formulahendry.code-runner",
+      "github.vscode-github-actions",
+      "mhutchie.git-graph",
+      "ms-python.debugpy",
+      "ms-python.python",
+      "ms-python.vscode-pylance",
+      "njpwerner.autodocstring",
+      "pkief.material-icon-theme",
+      "postman.postman-for-vscode",
+      "ritwickdey.liveserver",
+      "tamasfe.even-better-toml",
+      "tonybaloney.vscode-pets",
+      "xabikos.javascriptsnippets",
+      "zhuangtongfa.material-theme"
+    ]
+  }
+  

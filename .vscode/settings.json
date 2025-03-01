@@ -8,5 +8,5 @@
     "workbench.activityBar.orientation": "vertical",
     "vscode-pets.theme": "beach",
     "vscode-pets.throwBallWithMouse": true,
-    
+    "git.enableCommitSigning": true
 }

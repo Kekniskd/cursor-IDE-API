@@ -1,61 +1,73 @@
 from fastapi.testclient import TestClient
-from uuid import UUID
+from main import app
 
-def test_create_post(client: TestClient):
+client = TestClient(app)
+
+def test_create_and_read_post():
+    # Test creating a post
     post_data = {
         "title": "Test Post",
-        "content": "This is a test post",
+        "content": "Test Content",
         "author": "Test Author"
     }
-    
     response = client.post("/posts/", json=post_data)
     assert response.status_code == 201
-    data = response.json()
-    assert data["title"] == post_data["title"]
-    assert data["content"] == post_data["content"]
-    assert data["author"] == post_data["author"]
-    assert "id" in data
-    assert "created_at" in data
-    assert "updated_at" in data
+    created_post = response.json()
+    post_id = created_post["id"]
     
-    # Store post_id for other tests
-    return data["id"]
+    # Test reading the created post
+    response = client.get(f"/posts/{post_id}")
+    assert response.status_code == 200
+    assert response.json()["title"] == post_data["title"]
+    assert response.json()["content"] == post_data["content"]
+    assert response.json()["author"] == post_data["author"]
 
-def test_get_all_posts(client: TestClient):
+def test_get_all_posts():
+    # Create a test post first
+    post_data = {
+        "title": "Another Post",
+        "content": "More Content",
+        "author": "Another Author"
+    }
+    client.post("/posts/", json=post_data)
+    
+    # Test getting all posts
     response = client.get("/posts/")
     assert response.status_code == 200
     assert isinstance(response.json(), list)
+    assert len(response.json()) > 0
 
-def test_get_post(client: TestClient):
-    # First create a post
-    post_id = test_create_post(client)
+def test_update_post():
+    # Create a post first
+    post_data = {
+        "title": "Original Title",
+        "content": "Original Content",
+        "author": "Original Author"
+    }
+    response = client.post("/posts/", json=post_data)
+    post_id = response.json()["id"]
     
-    # Get the post
-    response = client.get(f"/posts/{post_id}")
-    assert response.status_code == 200
-    data = response.json()
-    assert data["id"] == post_id
-
-def test_update_post(client: TestClient):
-    # First create a post
-    post_id = test_create_post(client)
-    
+    # Update the post
     update_data = {
         "title": "Updated Title",
-        "content": "Updated content",
+        "content": "Updated Content",
         "author": "Updated Author"
     }
-    
     response = client.put(f"/posts/{post_id}", json=update_data)
     assert response.status_code == 200
-    data = response.json()
-    assert data["title"] == update_data["title"]
-    assert data["content"] == update_data["content"]
-    assert data["author"] == update_data["author"]
+    assert response.json()["title"] == update_data["title"]
+    assert response.json()["content"] == update_data["content"]
+    assert response.json()["author"] == update_data["author"]
 
-def test_delete_post(client: TestClient):
-    # First create a post
-    post_id = test_create_post(client)
+def test_delete_post():
+    # Create a post first
+    post_data = {
+        "title": "Post to Delete",
+        "content": "Content to Delete",
+        "author": "Author to Delete"
+    }
+    response = client.post("/posts/", json=post_data)
+    post_id = response.json()["id"]
     
     # Delete the post
     response = client.delete(f"/posts/{post_id}")

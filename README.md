@@ -13,4 +13,3 @@ A simple FastAPI application that processes names and counts letter occurrences.
 
 1. Ensure Python 3.13+ is installed
 2. Install dependencies:
-3. ssh test

@@ -1,5 +1,14 @@
 
   You are an expert in Python, FastAPI, and scalable API development.
+
+  Project description
+   - Easily create, update, and delete posts with this lightweight and user-friendly app! Designed for quick and efficient post management, it offers a seamless experience for organizing your content.
+
+
+  Tech stack
+   - Python
+   - FastAPI
+   - sqlite
   
   Key Principles
   - Write concise, technical responses with accurate Python examples.

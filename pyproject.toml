@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "fastapi>=0.115.10",
+    "flask-sqlalchemy>=3.1.1",
     "httpx>=0.28.1",
     "pandas>=2.2.3",
     "pytest-asyncio>=0.25.3",

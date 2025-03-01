@@ -8,5 +8,10 @@
     "workbench.activityBar.orientation": "vertical",
     "vscode-pets.theme": "beach",
     "vscode-pets.throwBallWithMouse": true,
-    "git.enableCommitSigning": true
+    "git.enableCommitSigning": true,
+    "python.testing.pytestArgs": [
+        "tests"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
 }

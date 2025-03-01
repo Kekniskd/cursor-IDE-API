@@ -14,8 +14,8 @@ A simple FastAPI application that processes names and counts letter occurrences.
 ```mermaid
 flowchart TD
     A[Client]
-    B[Root Endpoint\n GET /]
-    C[Name Endpoint\n POST /name]
+    B[Root Endpoint GET /]
+    C[Name Endpoint POST /name]
     D[Pydantic Validator]
     E[Letter Counter]
     F[Response Generator]

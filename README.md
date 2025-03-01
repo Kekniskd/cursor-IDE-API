@@ -15,12 +15,12 @@ A simple FastAPI application for managing posts with SQLite backend and comprehe
 
 ```mermaid
 flowchart TD
-    A[Client]
-    B[FastAPI App]
-    C[Router Layer]
-    D[Database Layer]
-    E[Logging System]
-    F[SQLite DB]
+    A[<font color=black>Client</font>]
+    B[<font color=black>FastAPI App</font>]
+    C[<font color=black>Router Layer</font>]
+    D[<font color=black>Database Layer</font>]
+    E[<font color=black>Logging System</font>]
+    F[<font color=black>SQLite DB</font>]
 
     A -->|HTTP Request| B
     B -->|Route| C
@@ -31,10 +31,10 @@ flowchart TD
     D -->|Log DB Event| E
 
     subgraph Operations
-        G[Create Post]
-        H[Read Post]
-        I[Update Post]
-        J[Delete Post]
+        G[<font color=black>Create Post</font>]
+        H[<font color=black>Read Post</font>]
+        I[<font color=black>Update Post</font>]
+        J[<font color=black>Delete Post</font>]
     end
 
     C --> Operations

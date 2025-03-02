@@ -67,7 +67,7 @@ flowchart TD
 2. Clone the repository
 3. Install dependencies:
 ```bash
-pip install fastapi uvicorn sqlalchemy pydantic python-jose[cryptography] passlib[bcrypt] python-multipart
+pip install -r requirements.txt
 ```
 
 ## Project Structure

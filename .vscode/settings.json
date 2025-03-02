@@ -6,7 +6,7 @@
     "workbench.sideBar.location": "left",
     "workbench.activityBar.iconClickBehavior": "focus",
     "workbench.activityBar.orientation": "vertical",
-    "vscode-pets.theme": "beach",
+    "vscode-pets.theme": "winter",
     "vscode-pets.throwBallWithMouse": true,
     "git.enableCommitSigning": true,
     "python.testing.pytestArgs": [

@@ -1,5 +1,4 @@
 from fastapi import APIRouter, HTTPException, status, Depends, Query
-from typing import List
 from sqlalchemy.orm import Session
 from src.models.post import Post, PostCreate, PostBase, PaginatedPosts
 from src.database.config import get_db
